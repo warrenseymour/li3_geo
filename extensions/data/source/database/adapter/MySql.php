@@ -11,7 +11,7 @@ class MySql extends \lithium\data\source\database\adapter\MySql {
 	public function value($value, array $schema = array()) {
 		if(isset($schema['type']) && $schema['type'] == 'point') {
 			if(is_array($value)) {
-				return "PointFromText('POINT({$value['latitude']} {$value['longitude']})')";
+				return "PointFromText('POINT({$value['longitude']} {$value['latitude']})')";
 			}
 		}
         return parent::value($value, $schema);
